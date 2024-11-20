@@ -131,7 +131,7 @@ try {
         try {
             Write-Host "*** AVD AIB CUSTOMIZER PHASE : Set default language - Install language packs -  Attempt: $i ***"   
             Install-Language -Language $LanguageTag -ErrorAction Stop
-            Write-Host "*** AVD AIB CUSTOMIZER PHASE : Set default lanhguage - Install language packs -  Installed language $LanguageCode ***"   
+            Write-Host "*** AVD AIB CUSTOMIZER PHASE : Set default lanhguage - Install language packs -  Installed language $LanguageTag ***"   
             break
         }
         catch {
@@ -151,7 +151,7 @@ try {
   Set-WinUILanguageOverride -Language $LanguageTag
   
   # Enable language Keyboard for Windows.
-  $userLanguageList = New-WinUserLanguageList -Language $languageCode
+  $userLanguageList = New-WinUserLanguageList -Language $LanguageTag
   $installedUserLanguagesList = Get-WinUserLanguageList
 
   foreach($language in $installedUserLanguagesList)
